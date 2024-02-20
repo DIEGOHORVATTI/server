@@ -12,11 +12,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup pnpm
+      - name: Setup yarn
         id: pnpm
         run: |
-          npm i pnpm@latest -g
-          sed -i '/^use-node-version/s/^/#/' .npmrc
+          npm install -g yarn
           echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
           sed -i '/^#use-node-version/s/^#//' .npmrc
 
@@ -28,6 +27,6 @@ jobs:
           restore-keys: ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: pnpm i -P
+        run: yarn install
 
-      - run: pnpm build
+      - run: yarn build
