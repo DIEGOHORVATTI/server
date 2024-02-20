@@ -1,7 +1,9 @@
 {
-  "name": "node-ts",
-  "version": "0.0.0",
-  "author": "dayblox",
+  "name": "multfoco-translation",
+  "version": "0.0.1",
+  "author": "MultFoco",
+  "license": "MIT",
+  "private": true,
   "description": "Node.js & TypeScript starter",
   "scripts": {
     "dev:build": "esbuild dev.ts ./src --bundle --outdir=dist --packages=external --platform=node --sourcemap --watch",
