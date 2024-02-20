@@ -1,0 +1,75 @@
+{
+  "env": {
+    "jest": true,
+    "es2021": true,
+    "browser": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "globals": {
+    "VoidFunction": "readonly",
+    "RequestInit": "readonly",
+    "Dict": "readonly",
+    "RequestInfo": "readonly",
+    "JSX": "readonly",
+    "React": "readonly"
+  },
+  "extends": [
+    "standard",
+    "plugin:react-hooks/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:prettier/recommended",
+    "plugin:react/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*.d.ts"],
+      "rules": {
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": ["off"],
+        "no-empty-function": 2
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "react-hooks", "prettier", "react"],
+  "rules": {
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "no-console": [
+      "warn",
+      {
+        "allow": ["warn", "error"]
+      }
+    ],
+    "import/no-webpack-loader-syntax": "off",
+    "react/no-unescaped-entities": "off",
+    "@next/next/no-img-element": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/no-children-prop": "off",
+    "no-unused-expressions": "off",
+    "no-use-before-define": "off",
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "no-unused-vars": "warn",
+    "react/jsx-key": "off",
+    "prettier/prettier": 2,
+    "no-undef": "warn",
+    "camelcase": "off",
+    "eqeqeq": "off"
+  }
+}
